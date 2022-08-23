@@ -1,0 +1,9 @@
+info:
+  title: smile2pass
+  version: 1.0.0
+paths: {}
+openapi: 3.0.0
+servers:
+  - url: Backend
+    variables: {}
+    description: backend
