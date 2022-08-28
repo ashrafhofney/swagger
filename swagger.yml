@@ -1,19 +1,19 @@
 info:
-  title: smile2pass
-  description: smile2pass
+  title: project
+  description: project
   termsOfService: www.google.com
   contact:
-    email: ashraf.hofny@blink22.com
+    email: am.hofney@gmail.com
   license:
-    name: Blink22
-    url: www.blink22.com
+    name: license
+    url: www.google.com
   version: 1.0.0
 openapi: 3.0.0
 servers:
   - url: /api/
     description: Backend Service
 externalDocs:
-  url: https://app.diagrams.net/#G14Dm3-hNEgVhMQUS20OVbQ128bmar9REm
+  url: www.google.com
   description: Architecture
 
 tags:
