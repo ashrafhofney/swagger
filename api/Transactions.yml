@@ -1,11 +1,19 @@
 get:
   tags:
-    - Customer
-  summary: List Customers
-  description: 'List Customers'
-  operationId: listCustomers
+    - Transaction
+  summary: List Transactions
+  description: 'List Transactions'
+  operationId: listTransactions
   parameters:
     - $ref: '../parameters/requestId.yml'
+    - name: status
+      in: query
+      description: Filter by status
+      required: false
+      explode: true
+      schema:
+        type: string
+        example: PENDING
   responses:
     '200':
       description: Successful operation
@@ -18,7 +26,7 @@ get:
                   data:
                     type: array
                     items:
-                      $ref: '../schemas/Customer.yml'
+                      $ref: '../schemas/Transaction.yml'
     '400':
       description: Invalid ID supplied
       content:

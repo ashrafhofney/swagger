@@ -17,17 +17,26 @@ externalDocs:
   description: Architecture
 
 tags:
-  - name: customer
+  - name: Customer
     description: Customer
+    externalDocs:
+      description: description
+      url: www.google.com
+  - name: Transaction
+    description: Transaction
     externalDocs:
       description: description
       url: www.google.com
 
 paths:
-  /api/customers:
+  /customers:
     $ref: './api/Customers.yml'
-  /api/customer:
+  /customer:
     $ref: './api/Customer.yml'
+  /transactions:
+    $ref: './api/Transactions.yml'
+  /transaction:
+    $ref: './api/Transaction.yml'
       
 components:
   parameters:
@@ -35,6 +44,9 @@ components:
       $ref: './parameters/requestId.yml'
     customerId:
       $ref: './parameters/customerId.yml'
+    transactionId:
+      $ref: './parameters/transactionId.yml'
+
   schemas:
     Customer:
       $ref: './schemas/Customer.yml'

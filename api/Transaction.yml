@@ -1,10 +1,10 @@
 get:
   tags:
-    - Customer
-  summary: Get Customer
-  operationId: getCustomerById
+    - Transaction
+  summary: Get Transaction
+  operationId: getTransactionById
   parameters:
-    - $ref: '../parameters/customerId.yml'
+    - $ref: '../parameters/transactionId.yml'
     - $ref: '../parameters/requestId.yml'
   responses:
     '200':
@@ -16,7 +16,7 @@ get:
               - $ref: '../responses/Response200.yml'
               - properties:
                   data:
-                    $ref: '../schemas/Customer.yml'
+                    $ref: '../schemas/Transaction.yml'
     '400':
       description: Invalid ID supplied
       content:
@@ -30,7 +30,7 @@ get:
           schema:
             $ref: '../responses/Response401.yml'
     '404':
-      description: Customer not found
+      description: Transaction not found
       content:
         application/json:
           schema:
@@ -51,19 +51,19 @@ get:
     - api_key: []
 put:
     tags:
-      - Customer
-    summary: Update an existing customer
-    description: Update an existing customer by Id
-    operationId: updateCustomer
+      - Transaction
+    summary: Update an existing Transaction
+    description: Update an existing Transaction by Id
+    operationId: updateTransaction
     parameters:
-      - $ref: '../parameters/customerId.yml'
+      - $ref: '../parameters/transactionId.yml'
       - $ref: '../parameters/requestId.yml'
     requestBody:
-      description: Update an existent customer
+      description: Update an existent Transaction
       content:
         application/json:
           schema:
-            $ref: '../schemas/Customer.yml'
+            $ref: '../schemas/Transaction.yml'
       required: true
     responses:
       '200':
@@ -75,7 +75,7 @@ put:
                 - $ref: '../responses/Response200.yml'
                 - properties:
                     data:
-                      $ref: '../schemas/Customer.yml'
+                      $ref: '../schemas/Transaction.yml'
       '400':
         description: Invalid ID supplied
         content:
@@ -89,7 +89,7 @@ put:
             schema:
               $ref: '../responses/Response401.yml'
       '404':
-        description: Customer not found
+        description: Transaction not found
         content:
           application/json:
             schema:
@@ -110,18 +110,18 @@ put:
       - api_key: []
 post:
   tags:
-    - Customer
-  summary: Add a new customer
-  description: Add a new customer
-  operationId: addCustomer
+    - Transaction
+  summary: Add a new Transaction
+  description: Add a new Transaction
+  operationId: addTransaction
   parameters:
     - $ref: '../parameters/requestId.yml'
   requestBody:
-    description: Create a new customer
+    description: Create a new Transaction
     content:
       application/json:
         schema:
-          $ref: '../schemas/Customer.yml'
+          $ref: '../schemas/Transaction.yml'
     required: true
   responses:
     '200':
@@ -133,7 +133,7 @@ post:
               - $ref: '../responses/Response200.yml'
               - properties:
                   data:
-                    $ref: '../schemas/Customer.yml'
+                    $ref: '../schemas/Transaction.yml'
     '400':
       description: Invalid ID supplied
       content:
@@ -147,7 +147,7 @@ post:
           schema:
             $ref: '../responses/Response401.yml'
     '404':
-      description: Customer not found
+      description: Transaction not found
       content:
         application/json:
           schema:
@@ -164,59 +164,5 @@ post:
         application/json:
           schema:
             $ref: '../responses/Response5xx.yml'
-  security:
-    - api_key: []
-delete:
-  tags:
-    - Customer
-  summary: Delete customer
-  description: Delete customer
-  operationId: deleteCustomer
-  parameters:
-    - $ref: '../parameters/customerId.yml'
-    - $ref: '../parameters/requestId.yml'
-  responses:
-    '200':
-      description: Successful operation
-      content:
-        application/json:
-          schema:
-            allOf:
-              - $ref: '../responses/Response200.yml'
-              - properties:
-                  data:
-                    type: boolean
-                    example: false
-    '400':
-      description: Invalid ID supplied
-      content:
-        application/json:
-          schema:
-            $ref: '../responses/Response400.yml'
-    '401':
-      description: Unauthorized access
-      content:
-        application/json:
-          schema:
-            $ref: '../responses/Response401.yml'
-    '404':
-      description: Customer not found
-      content:
-        application/json:
-          schema:
-            $ref: '../responses/Response404.yml'
-    '405':
-      description: Validation error
-      content:
-        application/json:
-          schema:
-            $ref: '../responses/Response405.yml'
-    '500':
-      description: Server error
-      content:
-        application/json:
-          schema:
-            $ref: '../responses/Response5xx.yml'
-              
   security:
     - api_key: []
