@@ -10,5 +10,9 @@ swagger-ui:
     - 8082:8080
   volumes:
     - ./swagger.yml:/swagger.yml
+    - ./schemas:/schemas
+    - ./api:/api
+    - ./parameters:/parameters
+    - ./responses:/responses
   environment:
     SWAGGER_JSON: /swagger.yml

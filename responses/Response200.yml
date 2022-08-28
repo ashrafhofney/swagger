@@ -1,0 +1,9 @@
+type: object
+required: [success, statusCode]
+properties:
+  success:
+    type: boolean
+    example: true
+  statusCode:
+    type: number
+    example: 200

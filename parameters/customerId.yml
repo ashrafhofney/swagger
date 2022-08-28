@@ -1,0 +1,8 @@
+name: id
+in: query
+description: Customer ID
+required: true
+explode: true
+schema:
+  type: number
+  example: 100000

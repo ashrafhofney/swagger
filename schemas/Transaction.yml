@@ -1,0 +1,14 @@
+type: object
+properties:
+  id:
+    type: number
+    example: 100000
+  reference:
+    type: string
+    example: reference
+  customerId:
+    type: number
+    example: 100000
+  statusId:
+    type: number
+    example: 2

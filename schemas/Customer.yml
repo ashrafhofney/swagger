@@ -1,0 +1,17 @@
+type: object
+properties:
+  id:
+    type: number
+    example: 100000
+  username:
+    type: string
+    example: fehguy
+  address:
+    type: array
+    xml:
+      name: addresses
+      wrapped: true
+    items:
+      $ref: 'Address.yml'
+xml:
+  name: customer

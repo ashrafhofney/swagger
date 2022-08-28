@@ -1,9 +1,64 @@
 info:
   title: smile2pass
+  description: smile2pass
+  termsOfService: www.google.com
+  contact:
+    email: ashraf.hofny@blink22.com
+  license:
+    name: Blink22
+    url: www.blink22.com
   version: 1.0.0
-paths: {}
 openapi: 3.0.0
 servers:
-  - url: Backend
-    variables: {}
-    description: backend
+  - url: /api/
+    description: Backend Service
+externalDocs:
+  url: https://app.diagrams.net/#G14Dm3-hNEgVhMQUS20OVbQ128bmar9REm
+  description: Architecture
+
+tags:
+  - name: customer
+    description: Customer
+    externalDocs:
+      description: description
+      url: www.google.com
+
+paths:
+  /api/customers:
+    $ref: './api/Customers.yml'
+  /api/customer:
+    $ref: './api/Customer.yml'
+      
+components:
+  parameters:
+    requestId:
+      $ref: './parameters/requestId.yml'
+    customerId:
+      $ref: './parameters/customerId.yml'
+  schemas:
+    Customer:
+      $ref: './schemas/Customer.yml'
+    Address:
+      $ref: './schemas/Address.yml'
+    Transaction:
+      $ref: './schemas/Transaction.yml'
+    TransactionStatus:
+      $ref: './schemas/TransactionStatus.yml'
+    Response200:
+      $ref: './responses/Response200.yml'
+    Response400:
+      $ref: './responses/Response400.yml'
+    Response401:
+      $ref: './responses/Response401.yml'
+    Response404:
+      $ref: './responses/Response404.yml'
+    Response405:
+      $ref: './responses/Response405.yml'
+    Response5xx:
+      $ref: './responses/Response5xx.yml'
+        
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header

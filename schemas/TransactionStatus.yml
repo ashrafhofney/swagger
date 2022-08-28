@@ -1,0 +1,9 @@
+type: object
+properties:
+  id:
+    type: number
+    example: 100000
+  name:
+    type: string
+    example: ACCEPTED
+    enum: [CREATED, PENDING, ACCEPTED, REJECTED, CANCELED, REFUNDED]
