@@ -1,0 +1,90 @@
+info:
+  title: backend
+  description: project
+  termsOfService: www.google.com
+  contact:
+    email: am.hofney@gmail.com
+  license:
+    name: license
+    url: www.google.com
+  version: 1.0.0
+openapi: 3.0.0
+servers:
+  - url: https://api{environment}.example.com
+    description: Backend Service
+    variables:
+      environment:
+        default: ''     # Production server
+        enum:
+          - ''          # Production server
+          - .dev        # Development server
+          - .staging    # Staging server
+      protocol:
+        enum:
+          - http
+          - https
+        default: https
+externalDocs:
+  url: www.google.com
+  description: Architecture
+
+tags:
+  - name: '[Api] Customer'
+    description: Customer
+    externalDocs:
+      description: description
+      url: www.google.com
+  - name: '[Api] Transaction'
+    description: Transaction
+    externalDocs:
+      description: description
+      url: www.google.com
+
+paths:
+  /customers:
+    $ref: './api/Customers.yml'
+  /customer:
+    $ref: './api/Customer.yml'
+  /transactions:
+    $ref: './api/Transactions.yml'
+  /transaction:
+    $ref: './api/Transaction.yml'
+  /transaction/authorize:
+    $ref: './api/AuthorizeTransaction.yml'
+      
+components:
+  parameters:
+    requestId:
+      $ref: '../common/parameters/requestId.yml'
+    customerId:
+      $ref: '../common/parameters/customerId.yml'
+    transactionId:
+      $ref: '../common/parameters/transactionId.yml'
+
+  schemas:
+    Customer:
+      $ref: '../common/schemas/Customer.yml'
+    Address:
+      $ref: '../common/schemas/Address.yml'
+    Transaction:
+      $ref: '../common/schemas/Transaction.yml'
+    TransactionStatus:
+      $ref: '../common/schemas/TransactionStatus.yml'
+    Response200:
+      $ref: '../common/responses/Response200.yml'
+    Response400:
+      $ref: '../common/responses/Response400.yml'
+    Response401:
+      $ref: '../common/responses/Response401.yml'
+    Response404:
+      $ref: '../common/responses/Response404.yml'
+    Response405:
+      $ref: '../common/responses/Response405.yml'
+    Response5xx:
+      $ref: '../common/responses/Response5xx.yml'
+        
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header

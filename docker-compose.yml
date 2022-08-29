@@ -9,10 +9,9 @@ swagger-ui:
   ports:
     - 8082:8080
   volumes:
-    - ./swagger.yml:/swagger.yml
-    - ./schemas:/schemas
-    - ./api:/api
-    - ./parameters:/parameters
-    - ./responses:/responses
+    - ./swagger-config.json:/usr/share/nginx/html/swagger-config.json
+    - ./common:/usr/share/nginx/html/common
+    - ./backend:/usr/share/nginx/html/backend
+    - ./payment:/usr/share/nginx/html/payment
   environment:
-    SWAGGER_JSON: /swagger.yml
+    CONFIG_URL: /swagger-config.json

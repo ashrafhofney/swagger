@@ -3,9 +3,12 @@ properties:
   id:
     type: number
     example: 100000
-  username:
+  name:
     type: string
-    example: fehguy
+    example: customer name
+  email:
+    type: string
+    example: customer@email.any
   address:
     type: array
     xml:

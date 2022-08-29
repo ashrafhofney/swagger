@@ -1,11 +1,11 @@
 get:
   tags:
-    - Customer
-  summary: List Customers
-  description: 'List Customers'
+    - '[Api] Customer'
+  summary: List Customers (Admin Panel)
+  description: 'List Customers available through admin panel only'
   operationId: listCustomers
   parameters:
-    - $ref: '../parameters/requestId.yml'
+    - $ref: '../../common/parameters/requestId.yml'
   responses:
     '200':
       description: Successful operation
@@ -13,41 +13,41 @@ get:
         application/json:
           schema:
             allOf:
-              - $ref: '../responses/Response200.yml'
+              - $ref: '../../common/responses/Response200.yml'
               - properties:
                   data:
                     type: array
                     items:
-                      $ref: '../schemas/Customer.yml'
+                      $ref: '../../common/schemas/Customer.yml'
     '400':
       description: Invalid ID supplied
       content:
         application/json:
           schema:
-            $ref: '../responses/Response400.yml'
+            $ref: '../../common/responses/Response400.yml'
     '401':
       description: Unauthorized access
       content:
         application/json:
           schema:
-            $ref: '../responses/Response401.yml'
+            $ref: '../../common/responses/Response401.yml'
     '404':
       description: Customer not found
       content:
         application/json:
           schema:
-            $ref: '../responses/Response404.yml'
+            $ref: '../../common/responses/Response404.yml'
     '405':
       description: Validation error
       content:
         application/json:
           schema:
-            $ref: '../responses/Response405.yml'
+            $ref: '../../common/responses/Response405.yml'
     '500':
       description: Server error
       content:
         application/json:
           schema:
-            $ref: '../responses/Response5xx.yml'
+            $ref: '../../common/responses/Response5xx.yml'
   security:
     - api_key: []

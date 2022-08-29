@@ -1,4 +1,4 @@
-name: requestId
+name: x-request-id
 in: header
 description: to track request through system
 required: true

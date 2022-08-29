@@ -1,0 +1,169 @@
+get:
+  tags:
+    - '[Api] Transaction'
+  summary: Get Transaction (Admin Panel)
+  description: Get Transaction by id available through admin panel only
+  operationId: getTransactionById
+  parameters:
+    - $ref: '../../common/parameters/transactionId.yml'
+    - $ref: '../../common/parameters/requestId.yml'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '../../common/responses/Response200.yml'
+              - properties:
+                  data:
+                    $ref: '../../common/schemas/Transaction.yml'
+    '400':
+      description: Invalid ID supplied
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/responses/Response400.yml'
+    '401':
+      description: Unauthorized access
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/responses/Response401.yml'
+    '404':
+      description: Transaction not found
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/responses/Response404.yml'
+    '405':
+      description: Validation error
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/responses/Response405.yml'
+    '500':
+      description: Server error
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/responses/Response5xx.yml'
+  security:
+    - api_key: []
+put:
+  tags:
+    - '[Api] Transaction'
+  summary: Update an existing Transaction (Admin Panel)
+  description: Update an existing Transaction by Id available through admin panel only
+  operationId: updateTransaction
+  parameters:
+    - $ref: '../../common/parameters/transactionId.yml'
+    - $ref: '../../common/parameters/requestId.yml'
+  requestBody:
+    description: Update an existent Transaction
+    content:
+      application/json:
+        schema:
+          $ref: '../../common/schemas/Transaction.yml'
+    required: true
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '../../common/responses/Response200.yml'
+              - properties:
+                  data:
+                    $ref: '../../common/schemas/Transaction.yml'
+    '400':
+      description: Invalid ID supplied
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/responses/Response400.yml'
+    '401':
+      description: Unauthorized access
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/responses/Response401.yml'
+    '404':
+      description: Transaction not found
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/responses/Response404.yml'
+    '405':
+      description: Validation error
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/responses/Response405.yml'
+    '500':
+      description: Server error
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/responses/Response5xx.yml'
+  security:
+    - api_key: []
+post:
+  tags:
+    - '[Api] Transaction'
+  summary: Add a new Transaction (Admin Panel)
+  description: Add a new Transaction available through admin panel only
+  operationId: addTransaction
+  parameters:
+    - $ref: '../../common/parameters/requestId.yml'
+  requestBody:
+    description: Create a new Transaction
+    content:
+      application/json:
+        schema:
+          $ref: '../../common/schemas/Transaction.yml'
+    required: true
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '../../common/responses/Response200.yml'
+              - properties:
+                  data:
+                    $ref: '../../common/schemas/Transaction.yml'
+    '400':
+      description: Invalid ID supplied
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/responses/Response400.yml'
+    '401':
+      description: Unauthorized access
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/responses/Response401.yml'
+    '404':
+      description: Transaction not found
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/responses/Response404.yml'
+    '405':
+      description: Validation error
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/responses/Response405.yml'
+    '500':
+      description: Server error
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/responses/Response5xx.yml'
+  security:
+    - api_key: []
