@@ -49,6 +49,8 @@ components:
     transactionId:
       $ref: '../common/parameters/transactionId.yml'
   schemas:
+    PaymentInfo:
+      $ref: '../common/schemas/PaymentInfo.yml'
     Transaction:
       $ref: '../common/schemas/Transaction.yml'
     TransactionStatus:

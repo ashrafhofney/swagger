@@ -2,7 +2,7 @@ type: object
 properties:
   id:
     type: number
-    example: 100000
+    example: 11
   reference:
     type: string
     example: reference
@@ -12,3 +12,22 @@ properties:
   statusId:
     type: number
     example: 2
+  amount:
+    type: number
+    example: 20
+  currency:
+    type: string
+    example: EGP
+  lang:
+    type: string
+    example: AR
+  parentTransactionId:
+    type: number
+    example: 10
+  extraInfo:
+    type: object
+    properties:
+      attribute:
+        type: string
+        example: anyValue
+  

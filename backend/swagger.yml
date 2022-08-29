@@ -66,6 +66,8 @@ components:
       $ref: '../common/schemas/Customer.yml'
     Address:
       $ref: '../common/schemas/Address.yml'
+    PaymentInfo:
+      $ref: '../common/schemas/PaymentInfo.yml'
     Transaction:
       $ref: '../common/schemas/Transaction.yml'
     TransactionStatus:

@@ -1,0 +1,30 @@
+type: object
+properties:
+  id:
+    type: number
+    example: 10000
+  customerId:
+    type: number
+    example: 10000
+  cardHolder:
+    type: string
+    example: JOHN
+  cardNumber:
+    type: string
+    example: 1111-1111-1111-1111
+  expMonth:
+    type: string
+    example: 11
+  expYear:
+    type: string
+    example: 22
+  cvv:
+    type: string
+    example: 123
+  extraInfo:
+    type: object
+    properties:
+      attribute:
+        type: string
+        example: anyValue
+  

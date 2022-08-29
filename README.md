@@ -10,4 +10,4 @@ Swagger UI: localhost:8082
 
 Useful Vscode extensions for Swagger
 - YAML for editing
-- Swagger Viewer for fast verify
+- Swagger Viewer for fast verify (without docker)

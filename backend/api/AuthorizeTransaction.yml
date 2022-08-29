@@ -11,7 +11,11 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../../common/schemas/Transaction.yml'
+          allOf:
+            - $ref: '../../common/schemas/Transaction.yml'
+            - properties:
+                paymentInfo:
+                  $ref: '../../common/schemas/PaymentInfo.yml'
     required: true
   responses:
     '200':

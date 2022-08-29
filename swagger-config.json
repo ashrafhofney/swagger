@@ -8,8 +8,5 @@
       "url": "/payment/swagger.yml",
       "name": "Payment Service"
     }
-  ],
-  "plugins": [
-    "topbar"
   ]
 }

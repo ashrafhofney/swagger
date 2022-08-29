@@ -12,5 +12,11 @@ properties:
   zip:
     type: string
     example: '94301'
+  extraInfo:
+    type: object
+    properties:
+      attribute:
+        type: string
+        example: anyValue
 xml:
   name: address

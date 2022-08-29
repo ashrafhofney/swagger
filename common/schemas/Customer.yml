@@ -9,6 +9,14 @@ properties:
   email:
     type: string
     example: customer@email.any
+  lang:
+    type: string
+    example: AR
+  country:
+    type: string
+    example: US
+  paymentInfo:
+    $ref: 'PaymentInfo.yml'
   address:
     type: array
     xml:
@@ -16,5 +24,11 @@ properties:
       wrapped: true
     items:
       $ref: 'Address.yml'
+  extraInfo:
+    type: object
+    properties:
+      attribute:
+        type: string
+        example: anyValue
 xml:
   name: customer
